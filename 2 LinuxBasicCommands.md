@@ -34,4 +34,5 @@
 * netstat -an |grep 178
 
 ```
+![ansible](images/AnsibleNote.jpg)
 
