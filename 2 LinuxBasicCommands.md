@@ -1,5 +1,7 @@
 # Linux
+___
 ## Linux basic commands
+
 ```
 * mkdir myfolder
 * mkdir -p maha/{1/{a,b},2/{a,b}}
@@ -36,3 +38,4 @@
 ```
 user this `commads` 
 
+***
