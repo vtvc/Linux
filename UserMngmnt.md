@@ -30,11 +30,6 @@
 ```
     #   less /etc/passwd
     #   less /etc/shadow
-``
-
-
-
-```
 
  as root user:
 
