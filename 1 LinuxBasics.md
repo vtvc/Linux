@@ -8,7 +8,7 @@
 
 * Also it is very tough for humans to understand the binary language, in such case we need an interface
 
-* Which can translate human language to hardware and vice-versa for effective communication.
+* Which can translates human language to hardware and vice-versa for effective communication.
 
 [link](https://www.guru99.com/operating-system-tutorial.html "use this link for")
 
