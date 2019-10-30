@@ -36,7 +36,7 @@
     apt-get install apache2
     apt-get update
     adduser maha
-     visudo
+    visudo
      * udder root privileged 
     maha ALL=(ALL) NOPASSWD: ALL
     :wq!
@@ -50,3 +50,43 @@ As normal user:
 
 
 ```
+
+
+## Types of users:
+
+
+| Type | Example | UserID | GroupID | HomeDir |Shell |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|Super user|root|0|0|/root|/bin/bash|
+|system users|jenkin,mail|0-499|0-499|/var/ftp| /sbin/nologin|
+|Normal users| maha,Raj| 500-60000|500- 60000|/home/username| /bin/bash|
+
+
+___
+# 30-oct-19:
+
+
+### Super user or root user 
+ * Super user or the root user is the most powerful user. He can do anything as  admin user. 
+
+### System user 
+* System users are the users created by the softwares or applications. For example if we install Apache it will create a user apache. These kinds of users are known as system users. 
+
+### Normal user
+ * Normal users are the users created by **root** user. They are normal users like maha, raj etc. Only the root user has the permission to create or remove a user. **_We can make normal user as sudo user by root_**.
+
+
+## Whenever a user is created in Linux, what are things created by default:-
+* A home directory is created(/home/username)
+* A mail box is created(/var/spool/mail)
+* unique UID,
+* unique GID are given to user
+
+## Linux uses UPG (User Private Group) scheme
+* It means that whenever a user is created is has its own private group
+> For Example if a user is created with the name maha, then a primary group for that user will be **maha** only
+
+## Important files for user
+ * /etc/passwd  : in this file  maintain **username** information 
+ * /etc/shadow :  in this file maintain  **password** information
+
