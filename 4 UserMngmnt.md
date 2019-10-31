@@ -90,3 +90,71 @@ ___
  * /etc/passwd  : in this file  maintain **username** information 
  * /etc/shadow :  in this file maintain  **password** information
 
+ >  vi /etc/passwd
+    tcpdump:x:72:72::/:/sbin/nologin
+    ec2-user:x:1000:1000:EC2 Default User:/home/ec2-user:/bin/bash
+    Maha:x:1001:1001:myuser:/home/maha:/bin/bash
+```
+The above fields are
+
+maha =name
+x= link to password file i.e. /etc/shadow
+1001= UID (user id)
+100 1=GID (group id)
+myuser= comment (brief information about the user)
+/home/maha = home directory of the user
+/bin/bash = shell
+
+```
+
+  
+
+
+```
+ vi /etc/shadow
+ maha:$6$iPmA:18166:0:99999:7:::
+ The fields are as follows,
+1. maha = User name
+2. $6$iPmA = Encrypted password 
+3. 18166 = Days since that password was last changed. 
+4. 0 = Days after which password must be changed.
+5. 99999 = Days before password is to expire that user is warned. 
+6. 7 = Days after the password is expires that the user is disabled.
+7. A reserved field.
+
+```
+
+## Creating a user
+```
+ # useradd <option> <username>
+
+options are
+-u user id
+-G Secondary group id
+-g primary group id
+-d home directory
+-c comment
+-s shell
+
+# adduser -d /home/sai -c mysaiuser -s /bin/bash -u 505 sai
+
+# passwd 
+
+```
+## Modifying the user’s attribute
+
+```
+# usermod <options> <username>
+-l  to change login name
+-L  to LOCK account
+-U  to UNLOCK account
+
+# usermod -L maha 
+# usermod -U maha
+
+```
+
+> Note: - when an account is locked it will show ! (Exclamation mark) in /etc/shadow file
+
+
+
