@@ -90,11 +90,12 @@ ___
  * /etc/passwd  : in this file  maintain **username** information 
  * /etc/shadow :  in this file maintain  **password** information
 
- >  vi /etc/passwd
+```
+   vi /etc/passwd
     tcpdump:x:72:72::/:/sbin/nologin
     ec2-user:x:1000:1000:EC2 Default User:/home/ec2-user:/bin/bash
     Maha:x:1001:1001:myuser:/home/maha:/bin/bash
-```
+
 The above fields are
 
 maha =name
@@ -156,5 +157,46 @@ options are
 
 > Note: - when an account is locked it will show ! (Exclamation mark) in /etc/shadow file
 
+## Password parameters
 
 
+ * For any user we can set the parameters for the password, like min and max password age, password expiration warnings and a/c expiration date etc
+
+ ```
+#chage -l < username>
+#chage -l maha
+
+ ```
+* Last password change: When the password was change last time.
+* Password expires: Password expiry date
+* Password inactive: After password expiry grace period before the account gets locked.
+* Account expires: Date on which the account expires.
+* Minimum number of days b/w password change: once the password is changed, it cannot be changed until a min period of specified date. [0] means never.
+* Max number of days b/w password change: After changing the password how long it will be valid for.
+* Number of days of warning before password expires: start of warnings to change the password, no. of days before the password expires.
+
+
+## Changing the password parameters
+* Changing of the password parameters can be done by two ways.
+```
+#chage <user name >
+#chage <option> <value> <username>
+
+```
+
+* -m for Min password age
+* -M for Max password age
+* -d for last time the password is changed.
+* -W Password expiration warnings
+* -I Password inactive [-1 means inactive].
+* -E A/C expiration date
+
+
+## Deleting a User:
+
+* To delete a user the syntax used is:
+```
+#userdel <username>    : without home dir
+#userdel –r < user name >  : with home dir 
+
+```
