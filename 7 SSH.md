@@ -5,6 +5,8 @@
  * with out pem file with passwd.
  * with out passwd, key-gen on my maha user 
 
+ ![passwd less](images/paaswdless.jpg)
+
  ## On Master: stage1
 
 
