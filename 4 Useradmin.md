@@ -27,6 +27,20 @@
 * Users are assigned a home directory and a program that is run when they login (Usually a shell)
 * Users cannot read, write or execute each other’s files without permission
 
+
+
+
+## Types of users:
+
+
+| Type | Example | UserID | GroupID | HomeDir |Shell |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|Super user|root|0|0|/root|/bin/bash|
+|system users|jenkin,mail|0-499|0-499|/var/ftp| /sbin/nologin|
+|Normal users| maha,Raj| 500-60000|500- 60000|/home/username| /bin/bash|
+
+
+
 ```
     #   less /etc/passwd
     #   less /etc/shadow
@@ -50,18 +64,6 @@ As normal user:
 
 
 ```
-
-
-## Types of users:
-
-
-| Type | Example | UserID | GroupID | HomeDir |Shell |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-|Super user|root|0|0|/root|/bin/bash|
-|system users|jenkin,mail|0-499|0-499|/var/ftp| /sbin/nologin|
-|Normal users| maha,Raj| 500-60000|500- 60000|/home/username| /bin/bash|
-
-
 ___
 # 30-oct-19:
 
